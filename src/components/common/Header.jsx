@@ -4,7 +4,9 @@ import NotificationIcon from "../../assets/icons/notification.svg";
 import Avater from "../../assets/images/avatars/avatar_1.png";
 import { Link } from "react-router-dom";
 import Logout from "../auth/Logout";
+
 const Header = () => {
+  
   return (
     <nav className="sticky top-0 z-50 border-b border-[#3F3F3F] bg-[#1E1F24] py-4">
       <div className="container flex flex-col items-center justify-between gap-6 sm:flex-row">
