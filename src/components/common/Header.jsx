@@ -2,7 +2,7 @@ import Logo from "../../assets/images/logo.svg";
 import HomeIcon from "../../assets/icons/home.svg";
 import NotificationIcon from "../../assets/icons/notification.svg";
 // import Avater from "../../assets/images/avatars/avatar_1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logout from "../auth/Logout";
 import { useAuth } from "../../hooks/useAuth";
 import { useProfile } from "../../hooks/useProfile";
@@ -10,6 +10,7 @@ import { useProfile } from "../../hooks/useProfile";
 const Header = () => {
   const { auth } = useAuth();
   const { state } = useProfile();
+  const navigate = useNavigate();
 
   const user = state?.user ?? auth?.user;
 
@@ -33,7 +34,7 @@ const Header = () => {
           </button>
           <Logout />
 
-          <button className="flex-center !ml-8 gap-3">
+          <button onClick={()=>navigate("/me")} className="flex-center !ml-8 gap-3">
             <span className="text-lg font-medium lg:text-xl">
               {user?.firstName}
               {user?.lastName}
